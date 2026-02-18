@@ -1,0 +1,28 @@
+modLoader = "javafml"
+loaderVersion = "${loader_version_range}"
+license = "${mod_license}"
+
+[[mods]]
+modId = "${mod_id}"
+version = "${mod_version}"
+displayName = "${mod_name}"
+#displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
+logoFile="logo.png"
+authors = "Dvoa512"
+description = '''
+Yet Another Resource Loader is a mod that helps modpack makers add default resource packs while keeping the configurability in-game
+'''
+[[dependencies.${ mod_id }]]
+
+modId = "neoforge"
+type = "required"
+versionRange = "[${neo_version},)"
+ordering = "NONE"
+side = "CLIENT"
+
+[[dependencies.${ mod_id }]]
+modId = "minecraft"
+type = "required"
+versionRange = "${minecraft_version_range}"
+ordering = "NONE"
+side = "CLIENT"
