@@ -39,8 +39,6 @@ public class Loader {
         Options options = mc.options;
 
         //Load new packs and make directory
-        if (!repoPath.toFile().exists())
-            repoPath.toFile().mkdirs();
         addPackFinder();
 
         //Get already selected packs
@@ -63,6 +61,8 @@ public class Loader {
     }
 
     public static void addPackFinder() {
+        if (!repoPath.toFile().exists())
+            repoPath.toFile().mkdirs();
         Minecraft mc = Minecraft.getInstance();
         PackRepository repo = mc.getResourcePackRepository();
 

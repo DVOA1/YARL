@@ -18,6 +18,8 @@ public class YARLClient {
             Loader.loadResources();
             Config.LOAD_RESOURCES.set(false);
             Config.LOAD_RESOURCES.save();
+        }else{
+            Loader.addPackFinder();
         }
     }
 
