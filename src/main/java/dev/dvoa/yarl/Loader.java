@@ -33,12 +33,12 @@ public class Loader {
         return packs;
     }
 
-    public static void loadResources() {
+    public static void firstLoadResources() {
         Minecraft mc = Minecraft.getInstance();
         PackRepository repo = mc.getResourcePackRepository();
         Options options = mc.options;
 
-        //Load new packs and make directory
+        //Load packs and make directory
         addPackFinder();
 
         //Get already selected packs
