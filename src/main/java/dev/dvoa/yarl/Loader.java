@@ -38,9 +38,6 @@ public class Loader {
         PackRepository repo = mc.getResourcePackRepository();
         Options options = mc.options;
 
-        //Load packs and make directory
-        addPackFinder();
-
         //Get already selected packs
         List<String> selected = new ArrayList<>(repo.getSelectedIds());
 
