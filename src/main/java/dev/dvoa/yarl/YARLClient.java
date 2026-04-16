@@ -11,18 +11,17 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 @EventBusSubscriber(modid = YARL.MODID, value = Dist.CLIENT)
 public class YARLClient {
     public YARLClient(ModContainer container) {
+        Config.load();
+        Loader.addPackFinder();
+        if (Config.LOAD_RESOURCES) {
+            Loader.firstLoadResources();
+            Config.LOAD_RESOURCES = false;
+            Config.save();
+        }
     }
 
     @SubscribeEvent
     static void onClientSetup(FMLClientSetupEvent event) {
-        if (Config.LOAD_RESOURCES.getAsBoolean()) {
-            Loader.firstLoadResources();
-            Config.LOAD_RESOURCES.set(false);
-            Config.LOAD_RESOURCES.save();
-        }
-//        }else{
-//            Loader.loadResources();
-//        }
     }
 
 }

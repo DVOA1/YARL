@@ -71,6 +71,15 @@ configurations {
 }
 
 dependencies {
+    implementation "net.neoforged:neoforge:${neo_version}"
+
+    jarJar(implementation(group: 'com.moandjiezana.toml', name: 'toml4j')) {
+        version {
+            prefer '0.7.2'
+        }
+    }
+
+    additionalRuntimeClasspath 'com.moandjiezana.toml:toml4j:0.7.2'
 }
 
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {

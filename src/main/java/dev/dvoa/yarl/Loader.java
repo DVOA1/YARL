@@ -51,10 +51,9 @@ public class Loader {
             }
         }
 
-        // Apply and reload
+        // Apply
         repo.setSelected(selected);
         options.save();
-        mc.reloadResourcePacks();
     }
 
     public static void addPackFinder() {

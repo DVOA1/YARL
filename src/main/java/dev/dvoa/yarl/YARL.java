@@ -18,8 +18,6 @@ public class YARL {
 
     public YARL(IEventBus modEventBus, ModContainer modContainer) {
         NeoForge.EVENT_BUS.register(this);
-        modContainer.registerConfig(ModConfig.Type.CLIENT, Config.SPEC);
-        Loader.addPackFinder();
     }
 
     @SubscribeEvent
